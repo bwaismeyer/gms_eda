@@ -1,82 +1,88 @@
-# Exploratory data analysis of gun violence and gun sales.
+# Exploratory Data Analysis of Mass Shootings and the Gun Market
+This document provides a summary of project goals, intended products, and 
+relevant supporting information. 
 
-### Key Questions
-1. How do US gun sales behave following mass shootings in the US?
-  * H1: Gun sales spike in the short-term following mass shootings.
+## Acronyms
+*EDA-MSGM*: Straight-forward acronym for the project title.
 
-### Data Targets
-* gun sale data (Google database?)
-  * date (as micro as possible, week probably the maximum length we want to work with), 
-  * location (ideally micro, but aiming for at least state level)
-* mass shooting data (look for website or repo)
-  * date (day/month/year), 
-  * location (ideally micro, but aiming for at least state level)
-* location political data (look for website or repo)
-  * some rating of political affiliation for the locations of interset (ideally micro, but aiming for at least state level)
+## Project Motives
+We want to better understand mass shootings and are curious about their
+economic impact on the gun market. In other words, we are satisfying personal
+curiousity and practicing data science skills for our own professional 
+development.
 
-* some secondary bits that might be nice to know
- * total rates of violence/homicide and total rates involving a gun (to put frequency of mass violence in context) - scale to match whatever time period we assess (e.g., make both annual or get totals over the window of interest)
+## Project Objective
+*Concrete, concise statement of "what is to be made/done" and by when.*
 
-### Data Sources
-#### mass shootings
-* [Mother Jones](http://www.motherjones.com/politics/2012/12/mass-shootings-mother-jones-full-data) is presented as a complete data set of US mass shootings from 1982-2015 (multiple formats, static links available)
- * 72 cases
- * includes date (day/month/year), location (city/state), weapon, and summaries of several other shooting details
- * method details are scattered across several pieces: 
-  * the dataset itself lists sources/methods for how each case was identified and verified
-  * [Mother Jones report using the data, including explicit criteria discussion](http://www.motherjones.com/politics/2012/07/mass-shootings-map)
-  * [argument by some scholars using the Mother Jones data that shootings are increasing in frequency](http://www.motherjones.com/politics/2014/10/mass-shootings-rising-harvard)
-  * [more focused article on the authors' analysis/methods, including some chatter about the Mother Jones data](http://www.motherjones.com/politics/2014/10/mass-shootings-increasing-harvard-research)
- * only counts shootings with 4+ deaths (not including the suspect, FBI definition)
- * should get at least one other data source to compare this against (for instance, [this report](http://www.gannett-cdn.com/GDContent/mass-killings/index.html#frequency) suggests the dataset may be incomplete - should review the dataset logic more carefully to see what the inclusion/exclusion criteria and methods are exactly
-* [USA today report](http://www.gannett-cdn.com/GDContent/mass-killings/index.html#explore) is completed as complete set of US massing "killings" from 2006-2015 (no obvious sharing format - likely needs to be scraped)
- * 287 cases
- * includes date (day/month/year), location (place/state), method, type, victims, and more
- * method details found [here](http://www.gannett-cdn.com/GDContent/mass-killings/index.html#title) by clicking on the "i", also only 4+ deaths
- * intentional effort to address errors and missing events in FBI records
- * includes more than gun mass killings
-* [this report](http://archive.is/f4gbv) claims a 227 incidents in a very short window of time - 2009-2013 - but may have a broader definition of shooting which it calls "rampage shooting"
- * lacks incident-level data and will need to dig to understand methods or assess credibility, but may be useful to contrast against other data sources and to assess rate of shooting "sprees" that don't fit 4+ criteria
-* [Stanford Library](https://library.stanford.edu/projects/mass-shootings-america/data) database for US mass shootings from 1966 to ?
- * total cases not stated but seems like a very formally structured/maintained dataset - however visible visualizations do not seem that densely populated...?
- * need to request data access but an online process in place
-* [FBI summary and maybe data](https://www.fbi.gov/news/stories/2014/september/fbi-releases-study-on-active-shooter-incidents/pdfs/a-study-of-active-shooter-incidents-in-the-u.s.-between-2000-and-2013) for 2000-2013
- * 160 cases
- * it's in a pdf...? yup...
- * may be well covered by the USA today data but has useful summaries and definitions beyond the data itself
-* [more recent Congressional Research report](http://reason.com/blog/2015/08/03/mass-shootings-study) for 1999-2013 and also references to an independent study for 1970+...
- * need to dig to see if there's actually any data available and what it involves... but has useful breakdowns and totals to contrast against other avaialable data sources but seems an excellent review of the key concepts around mass shootings v. other events and an excellent summary of key data sources...
- * NOTE: first attempt to locate one of the data sources failed - may have been removed from site it was on
+Build a dashboard - WombatStat - that conveys key wombat welfare statistics and 
+is integrated into the POC data site.
 
-### EDA Visualization
-* sale trends
-  * sales over time (line)
-  * sales by location (map)
-  * sale by location over time (line and/or fancy map)
-* mass shooting trends (geom_line)
-  * shootings over time
-  * shootings by location
-  * shootings by location over time
-* political trends
-  * ratings over time
-  * ratings by location
-  * ratings by location over time
-* key combinations of the above
-  * overlay of shootings and sales over time (line)
-    * same but by location (line and/or fancy map)
-    * same but by political rating (line)
+Target for completion is August 1, 2019
 
-### Analyses
-* time series analysis - ARIMA forecasting and/or odds-for-time-chunks (survival)
-* hlm approach (paul details incoming!)
+## Project Goal
+*Purpose of the thing to be made/done. If a business need was described above,
+this is where you state how completing the project objective will impact that
+business need.*
 
-### Milestones
-* identify data sources and strategize for how to extract needed data (Wed, Aug 26)
-  * gun sales data: Paul
-  * mass shooting data: Brian
-  * NEXT MEETING: review Roxygen and package styling, review R Markdown, plan implementation of data gathering/cleaning
+WombatStat should be a resource where internet literate wombats can get basic
+wombat welfare information. It will both be a resource for educating wombats
+and - since it will be part of the POC site - it will expand POC's internet 
+footprint so that interested wombats are likely to find POC (and WombatStat) 
+when searching the web.
 
-### Technical Requirements
-* work should be done in R and documented for integration into an R package Roxygen-style
-* work needs to be documented such that it can be easily shared via blogs
-* SHOULD NOT BE IN PIG LATIN EVER, PAUL
+## Audience Definition
+*A very concise definition of the target audience for the production/action.
+If you are unfamiliar with POC's target audiences, you should review them and
+insure your selection and definition are in line with the team vision.*
+
+This is a tool targeted towards new sections of the General Public.
+
+## Key Tasks Product Will Support for Target Audience(s)
+*Only really useful when the project is product focused. In this case, you need 
+to specify the most important one to five tasks the product will support. The 
+product should be designed around these tasks and product testing should test 
+the target audience ability to complete these tasks. Do not try to design a 
+single product for more than five tasks - more tasks than this suggests you 
+either need multiple products or you need to develop and test your product in 
+phases.*
+
+Wombats should be able to:
+* Learn about the wombat welfare process - where it begins and keys stages
+participants proceed through.
+* Get a rough sense of how many wombats are involved at different stages
+of the wombat welfare process.
+* Determine how many wombats are currently in out-of-hole care.
+* Determine common outcomes for out-of-hole care.
+* Assess how out-of-hole placement and outcomes have changed over time 
+(current should allow for coverage of the last 12 years).
+
+## Deliverables
+*List of the concrete components that satisfy the objective.*
+
+1. Standardized application structure and documentation
+2. Necessary database updating/organizing complete
+3. Data creation/flow complete and update schedule set
+4. Integration of app into POC's current data tool collection.
+5. Transition to advertising, testing, revision.
+
+## Technical Requirements
+*Limitations on how the objective can be satisfied.*
+
+Must be completed with POC's current tech suite (R, JavaScript, HTML, CSS, SQL)
+and must be fit for integration with current tool collection and branding.
+
+## Milestones
+*Major steps in the process with soft/hard deadlines.*
+
+* April 1: Stakeholder agreement on project scope (objective, goal, etc.).
+* April 15: Mock-ups and tech strategy complete.
+* April 30: Prototype implemented. Stakeholder review.
+
+## Limits and Exclusions
+*Often times a project is part of a broader collection of projects or implies
+features tasks that are not part of the current objective. Here is where such
+confusions can be clarified.*
+
+This project does not include advertising or full-scale usability testing in
+its scope. These will likely need to be tackled after the project given
+available resources/personnel.
