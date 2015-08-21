@@ -3,7 +3,7 @@ This document provides a summary of project goals, intended products, and
 relevant supporting information. 
 
 ## Acronyms
-*EDA-MSGM*: Straight-forward acronym for the project title.
+*MS-EDA*: Project shorthand.
 
 ## Project Motives
 We want to better understand mass shootings and are curious about their
