@@ -3,7 +3,7 @@ This document provides a summary of project goals, intended products, and
 relevant supporting information. 
 
 ## Acronyms
-*MS-EDA*: Project shorthand.
+**MS-EDA**: Project shorthand.
 
 ## Project Motives
 We want to better understand mass shootings and are curious about their
@@ -12,77 +12,67 @@ curiousity and practicing data science skills for our own professional
 development.
 
 ## Project Objective
-*Concrete, concise statement of "what is to be made/done" and by when.*
-
-Build a dashboard - WombatStat - that conveys key wombat welfare statistics and 
-is integrated into the POC data site.
-
-Target for completion is August 1, 2019
+Explore the history of mass shootings in the US, the history of gun sales,
+and assess if there is any relationship between the two.
 
 ## Project Goal
-*Purpose of the thing to be made/done. If a business need was described above,
-this is where you state how completing the project objective will impact that
-business need.*
+We want to provide easy-to-read visualizations and insights to inform 
+conversations around mass shootings, gun sales, and any possible relationships
+between the two.
 
-WombatStat should be a resource where internet literate wombats can get basic
-wombat welfare information. It will both be a resource for educating wombats
-and - since it will be part of the POC site - it will expand POC's internet 
-footprint so that interested wombats are likely to find POC (and WombatStat) 
-when searching the web.
+All code and data should be captured as an R package so that it is documented
+and reproducible.
 
 ## Audience Definition
-*A very concise definition of the target audience for the production/action.
-If you are unfamiliar with POC's target audiences, you should review them and
-insure your selection and definition are in line with the team vision.*
+Project data and write-ups will be tailored to a broad audience interested
+in the topics of mass shootings and guns sales. Data will be made available in 
+a broadly accessible format (e.g., CSV or Excel files) and at least some blog 
+posts will be non-technical.
 
-This is a tool targeted towards new sections of the General Public.
+Project code will be tailored towards analysis-savvy people who are
+comfortable with (or willing to learn) R.
 
 ## Key Tasks Product Will Support for Target Audience(s)
-*Only really useful when the project is product focused. In this case, you need 
-to specify the most important one to five tasks the product will support. The 
-product should be designed around these tasks and product testing should test 
-the target audience ability to complete these tasks. Do not try to design a 
-single product for more than five tasks - more tasks than this suggests you 
-either need multiple products or you need to develop and test your product in 
-phases.*
+Our broader audience should be able to:
+* Understand the premise of the study
+* Observe broad trends and key takeaways
+* Obtain the data in a non-specialized format
 
-Wombats should be able to:
-* Learn about the wombat welfare process - where it begins and keys stages
-participants proceed through.
-* Get a rough sense of how many wombats are involved at different stages
-of the wombat welfare process.
-* Determine how many wombats are currently in out-of-hole care.
-* Determine common outcomes for out-of-hole care.
-* Assess how out-of-hole placement and outcomes have changed over time 
-(current should allow for coverage of the last 12 years).
+Analytically-minded folks should be able to:
+* Access our finalized data as a built-in dataframe (or set of dataframes) in
+    the same R package
+* Access our code for gathering and cleaning data in the same R package
+* Reproduce any analyses we complete or visualizations we produce either via
+    documented R package functions or via clearly presented code in blog post
 
 ## Deliverables
-*List of the concrete components that satisfy the objective.*
-
-1. Standardized application structure and documentation
-2. Necessary database updating/organizing complete
-3. Data creation/flow complete and update schedule set
-4. Integration of app into POC's current data tool collection.
-5. Transition to advertising, testing, revision.
+1. R code for gathering and cleaning data (R package)
+2. Finalized data in multiple formats (R package, CSV, Excel)
+3. R code for analyses and visualizations (R package and/or blog posts)
+4. Non-technical summary of demographics via blog post (R markdown)
+5. Non-technical summary of other key observations via blog post (R markdown)
+6. At least one technical dive into analysing shooting ~ sales relationships, 
+    prepared as a well-structured R markdown file and knitted into a blog post
 
 ## Technical Requirements
-*Limitations on how the objective can be satisfied.*
-
-Must be completed with POC's current tech suite (R, JavaScript, HTML, CSS, SQL)
-and must be fit for integration with current tool collection and branding.
+All scraping and analysis should be completed in R or be executed by functions 
+in the planned R package.
 
 ## Milestones
-*Major steps in the process with soft/hard deadlines.*
-
-* April 1: Stakeholder agreement on project scope (objective, goal, etc.).
-* April 15: Mock-ups and tech strategy complete.
-* April 30: Prototype implemented. Stakeholder review.
+* Identify data targets, broad and narrow
+* Identify data sources and match them to targets
+* Shell and name for R package
+* Plan and code strategies for gathering data
+* Plan and code data cleaning
+* EDA
+* Plan and code demographics analysis and visualizations
+* Prepare demographics blog post - non-technical but code available
+* Plan and code any follow-up analyses, including success work
+* Prepare technical version of follow-up post(s)
+* Prepare non-technical version with key takeaways
+* Finalize R package and documentation on GitHub
 
 ## Limits and Exclusions
-*Often times a project is part of a broader collection of projects or implies
-features tasks that are not part of the current objective. Here is where such
-confusions can be clarified.*
-
-This project does not include advertising or full-scale usability testing in
-its scope. These will likely need to be tackled after the project given
-available resources/personnel.
+This project may collect data for other incidents of mass violence, but will
+limit analysis to mass shootings per the FBI definition (4 or more victims in
+a relatively contained time).
