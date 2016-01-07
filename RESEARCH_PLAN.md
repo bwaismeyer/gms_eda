@@ -80,3 +80,6 @@
 * work should be done in R and documented for integration into an R package Roxygen-style
 * work needs to be documented such that it can be easily shared via blogs
 * SHOULD NOT BE IN PIG LATIN EVER, PAUL
+
+### Other Resources
+* Pew reports on gun views: http://www.pewresearch.org/fact-tank/2016/01/05/5-facts-about-guns-in-the-united-states/?utm_source=Pew+Research+Center&utm_campaign=e2124accef-Weekly_Jan_7_20161_7_2016&utm_medium=email&utm_term=0_3e953b9b70-e2124accef-400040217
